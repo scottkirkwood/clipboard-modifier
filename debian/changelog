@@ -1,0 +1,6 @@
+clipboard-modifier (0.2.1-1) unstable; urgency=low
+
+  - Repackaging using pybdist.
+
+ -- Scott Kirkwood <scott@forusers.com>  Mon, 12 Jul 2010 23:12:13 +0300
+

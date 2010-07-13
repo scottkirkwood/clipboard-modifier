@@ -1,0 +1,9 @@
+Things That Need to be Done
+---------------------------
+
++ Support for parameters for each plugin
++ A general plugin for calling external programs, like 'gpg', say.
++ Help button for more information on each plugin and some examples.
++ Flexible GUI for each plugin, they can add their own buttons, checkboxes for example.
++ Common store for plugins where they can save settings without each having their own method, location.
+

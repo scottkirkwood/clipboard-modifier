@@ -1,0 +1,3 @@
+version=3
+http://code.google.com/p/clipboard-modifier/downloads/list \
+  http://clipboard-modifier[.]googlecode[.]com/files/clipboard-modifier_([0-9.]+)[.]tar[.]gz

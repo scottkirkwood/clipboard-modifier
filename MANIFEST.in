@@ -1,0 +1,10 @@
+include clipboardmodifier/*.py
+include clipboardmodifier/plugins/*.py
+include CHANGELOG.txt
+include TODO.txt
+include setup.py
+include ez_setup.py
+exclude .svn
+exclude clipboardmodifier/plugins/nametoemail.py
+exclude clipboardmodifier/plugins/find_people.pyc
+prune .svn

@@ -1,0 +1,26 @@
+Source: clipboard-modifier
+Section: utils
+Priority: optional
+Maintainer: Scott Kirkwood <scott@forusers.com>
+Build-Depends: cdbs, debhelper (>= 7), python (>= 2.4), python-support
+XS-Python-Version: >= 2.4
+Standards-Version: 3.8.4
+Homepage: http://code.google.com/p/key-mon/
+Vcs-Hg: https://key-mon.googlecode.com/hg/
+Vcs-Browser: http://key-mon.googlecode.com/hg/
+
+Package: clipboard-modifier
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-wxgtk2.8
+XB-Python-Version: ${python:Versions}
+Description: Change your clipboard text in a variety of ways
+ A flexible system to modify the text in a clipboard in a variety of ways.
+ .
+ Out of the box we have:
+ * Copy a spreadsheet and change the clipboard so that it can be pasted into a
+ * wiki, with vertical bars (|) instead of tabs.  Modify your multi-line clipboard text so that it can be pasted into Java or Python as strings.
+ * Modify an URL in the clipboard pointing to Amazon so that it has your Associate ID in it. 
+ * Run a shell command piping the clipboard to it and retrieving the output from it.
+ * Force a clibpboard to text (removing formatting, etc.).
+ * Convert a complicated url into it's python equivalent, using urlencode.
+ * And many more...
