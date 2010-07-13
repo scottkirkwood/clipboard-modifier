@@ -1,11 +1,22 @@
 #!/usr/bin/env python
 # -*- encoding: latin1 -*-
 #
-# Copyright 2008 Scott Kirkwood
+# Copyright 2010 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from _plugin import ClipboardPlugin, TestPlugin
 import re
-import wx
 
 def create_plugin():
   return I18n()
@@ -13,16 +24,16 @@ def create_plugin():
 class I18n(ClipboardPlugin):
   def __init__(self):
     ClipboardPlugin.__init__(self)
-    
+
   def name(self):
     return 'Internaltionaliztion->I18n'
-    
+
   def description(self):
     return 'Convert text like Internaltionaliztion to I18n'
-    
+
   def convert(self, text):
     """Convert to abcdef to anf.
-      
+
     Returns: Text
     """
     words = re.split(r'\s+', text)
@@ -37,7 +48,7 @@ class I18n(ClipboardPlugin):
 class TestRot13(TestPlugin):
   def setUp(self):
     self.instance = I18n()
-    
+
   def test_good(self):
     good_samples = [
       (u'localization', 'l10n'), 
@@ -56,7 +67,7 @@ class TestRot13(TestPlugin):
       (u'scott kirkwood', 'scott k6d'),
     ]
     self.verify_good_samples(good_samples, "Converted")
-    
+
 if __name__ == "__main__":
   import unittest
   unittest.main()

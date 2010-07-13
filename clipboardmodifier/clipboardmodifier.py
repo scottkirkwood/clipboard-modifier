@@ -20,8 +20,9 @@ __version__ = '0.2.1'
 import ConfigParser
 import optparse
 import os
+import plugins
 import re
-import subprocess
+import sys
 import wx
 
 """
@@ -157,7 +158,8 @@ class ClipboardModifierApp(wx.App):
     if wx.TheClipboard.Open():
       data = wx.TextDataObject()
       success = wx.TheClipboard.GetData(data)
-      self.grabbedClipboard = data.GetText()
+      if success:
+        self.grabbedClipboard = data.GetText()
       wx.TheClipboard.Close()
 
     return self.grabbedClipboard
@@ -207,8 +209,8 @@ class ClipboardModifierApp(wx.App):
 
   def TrimTip(self, text):
     """ Make sure the tip isn't too big """
-    max = 2048
-    if len(text) > max:
+    maxtip_size = 2048
+    if len(text) > maxtip_size:
       return text[0:2048]+"..."
     return text
 
@@ -222,6 +224,7 @@ class ClipboardModifierApp(wx.App):
         if not self.UpdateClipboard(self.sendClipboard):
           message = "Unable to update the clipboard"
 
+    self.SetStatusBar(message)
     event.Skip()
 
   def FindModules(self):
@@ -237,8 +240,6 @@ class ClipboardModifierApp(wx.App):
         self.import_plugin(import_text)
 
   def import_plugin(self, import_text):
-    import plugins
-
     print import_text
     try:
       __import__('clipboardmodifier.' + import_text)
@@ -250,8 +251,6 @@ class ClipboardModifierApp(wx.App):
     setattr(new_plugin, 'filename', import_text)
 
   def _GetPluginFiles(self):
-    import plugins
-
     plugindir = os.path.join(re.sub('__init__.py.?', '', plugins.__file__))
     ret = os.listdir(plugindir)
     return ret

@@ -4,7 +4,10 @@ include CHANGELOG.txt
 include TODO.txt
 include setup.py
 include ez_setup.py
+include man/*.1
+exclude clipboardmodifier/plugins/nametoemail.*
+exclude clipboardmodifier/plugins/find_people.*
 exclude .svn
-exclude clipboardmodifier/plugins/nametoemail.py
-exclude clipboardmodifier/plugins/find_people.pyc
+exclude .hg
 prune .svn
+prune .hg

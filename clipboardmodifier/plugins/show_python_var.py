@@ -1,10 +1,21 @@
 #!/usr/bin/env python
 # -*- encoding: latin1 -*-
 #
-# Copyright 2007 Scott Kirkwood
+# Copyright 2010 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from _plugin import ClipboardPlugin, TestPlugin
-import re
 import wx
 
 def create_plugin():
@@ -16,17 +27,17 @@ class ShowPythonVar(ClipboardPlugin):
     self.reset()
 
   def reset(self):
-    self.template = "print '%(var)s = %%s' %% str(%(var)s)" 
+    self.template = "print '%(var)s = %%s' %% str(%(var)s)"
 
   def name(self):
     return 'Show python var'
-    
+
   def description(self):
     return 'Makes "%s" into "%s"' % ('my_var', self.template % dict(var='my_var'))
-    
+
   def convert(self, text):
     """ Convert some text using the expression given
-      
+
     Returns: Text
     """
 
@@ -50,7 +61,7 @@ class ShowPythonVar(ClipboardPlugin):
     self.template = event.GetString()
     failed = False
     try:
-      text = self.template % dict(var='bob')
+      self.template % dict(var='bob')
     except ValueError:
       failed = True
     if not failed:
@@ -59,14 +70,14 @@ class ShowPythonVar(ClipboardPlugin):
 class TestShowPythonVar(TestPlugin):
   def setUp(self):
     self.instance = ShowPythonVar()
-    
+
   def test_good(self):
     good_samples = [
       ("my_var",
        "print 'my_var = %s' % str(my_var)"),
     ]
     self.verify_good_samples(good_samples, "Converted")
-    
+
 if __name__ == "__main__":
   import unittest
   unittest.main()
