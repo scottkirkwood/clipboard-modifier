@@ -247,8 +247,8 @@ class ClipboardModifierApp(wx.App):
       __import__(import_text) # This works when developing
     new_plugin = eval(import_text + '.create_plugin()')
     self.clipoard_methods.append(new_plugin)
-    setattr(new_plugin, 'parent', self)
-    setattr(new_plugin, 'filename', import_text)
+    new_plugin.parent = self
+    new_plugin.filename = import_text
 
   def _GetPluginFiles(self):
     plugindir = os.path.join(re.sub('__init__.py.?', '', plugins.__file__))

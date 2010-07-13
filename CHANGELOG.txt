@@ -8,10 +8,10 @@ Version 0.2.0 (2007-12-29)
 - Plugins updated:
   - Amazon link, you can put your own associate id.
   - runapp, run any program, passing the clipboard as stdin,  and new clipboard from stdout
-  - url2python, convert an url into an easiser to understand python snippet.
+  - url2python, convert an url into an easier to understand python snippet.
   - show_python_var, perform a string substitution. 
 
 Version 0.1.0 (2007-03-28)
-------------------------
+--------------------------
 Initial release
 

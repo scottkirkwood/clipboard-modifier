@@ -24,3 +24,11 @@ unusedNames = ['_', 'empty', 'unused', 'dummy']
 # ignore missing class attributes if name is one of these values
 missingAttrs = ['instance']
 
+# dict: suppress warnings
+# keys: 'module', 'module.function', 'module.class, 'module.class.method'
+# values: command line argument, minus the --
+suppressions = {
+  'clipboardmodifier': 'no-objattrs',
+  'show_python_var': 'no-noeffect'
+}
+

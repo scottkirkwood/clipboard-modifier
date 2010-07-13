@@ -16,14 +16,18 @@ Install
 
 or
 
-# easy_install.py mm2s5
+# pip clipboard-modifier
+
+or
+
+# sudo dpkg -i clipboard*.deb
 
 Prerequesites
 -------------
 
-Requires Python 2.3 or greater 
+Requires Python 2.4 or greater
 Requires wxPython
 
 License
 -------
-GNU GPL http://www.gnu.org/copyleft/gpl.html
+http://www.apache.org/licenses/LICENSE-2.0.html
