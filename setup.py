@@ -8,6 +8,7 @@ NAME = 'clipboard-modifier'
 VER = '0.2.1'
 DIR = 'clipboardmodifier'
 PY_NAME = 'clipboardmodifier'
+FRESHMEAT = 'clipboardmodifier'
 DEB_NAME = NAME.replace('-', '')
 RELEASE_FILE = 'CHANGELOG.txt'
 RELEASE_FORMAT=r'Version (?P<ver>[^ ]+) \((?P<date>[^)]+)\)'

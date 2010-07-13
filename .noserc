@@ -1,0 +1,3 @@
+[nosetests]
+exe=1
+all-modules=1
