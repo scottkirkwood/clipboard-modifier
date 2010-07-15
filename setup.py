@@ -33,11 +33,12 @@ SETUP = dict(
     long_description=
 """A flexible system to modify the text in a clipboard in a variety of ways.
 Out of the box we have:
+
   * Copy a spreadsheet and change the clipboard so that it can be pasted into a
   * wiki, with vertical bars (|) instead of tabs.  Modify your multi-line clipboard text so that it can be pasted into Java or Python as strings.
   * Modify an URL in the clipboard pointing to Amazon so that it has your Associate ID in it. 
   * Run a shell command piping the clipboard to it and retrieving the output from it.
-  * Force a clibpboard to text (removing formatting, etc.).
+  * Force a clipboard to text (removing formatting, etc.).
   * Convert a complicated url into it's python equivalent, using urlencode.
   * And many more...
 
