@@ -119,6 +119,8 @@ class ClipboardModifierApp(wx.App):
     fo.close()
 
   def SetDefaultClass(self, index):
+    if index >= len(self.clipoard_methods) - 1:
+      index = len(self.clipoard_methods) - 1
     self.lastIndexUsed = index
     self.class_to_use = self.clipoard_methods[index]
     self.combo.SetValue(self.class_to_use.name())
